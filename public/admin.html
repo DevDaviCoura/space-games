@@ -1,0 +1,375 @@
+
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SPACE GAMES | Painel Administrativo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/admin.css">
+
+    <script src="/js/admin-ui.js" defer></script>
+</head>
+
+<body>
+
+    <div class="admin-shell">
+
+        <!-- MENU LATERAL -->
+        <aside class="admin-sidebar">
+
+            <a class="brand" href="/">
+                <span class="brand-icon">👾</span>
+
+                <span class="brand-text">
+                    <strong>SPACE</strong>
+                    <b>GAMES</b>
+                </span>
+            </a>
+
+            <p class="admin-label">PAINEL ADMINISTRATIVO</p>
+
+            <nav class="admin-nav" aria-label="Seções administrativas">
+
+                <button class="active" data-tab="resumo">
+                    ◫ Visão geral
+                </button>
+
+                <button data-tab="jogos">
+                    🎮 Jogos
+                </button>
+
+                <button data-tab="categorias">
+                    ▦ Categorias
+                </button>
+
+                <button data-tab="pedidos">
+                    🧾 Pedidos
+                </button>
+
+                <button data-tab="usuarios">
+                    ♙ Usuários
+                </button>
+
+            </nav>
+
+            <a class="back-store" href="/">
+                ← Voltar à loja
+            </a>
+
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="admin-main">
+
+            <header class="admin-top">
+
+                <div>
+                    <p class="eyebrow">GERENCIAMENTO DA LOJA</p>
+                    <h1 id="page-title">Visão geral</h1>
+                </div>
+
+                <span class="demo-pill">
+                    ⚙ Administração
+                </span>
+
+            </header>
+
+            <!-- VISÃO GERAL -->
+            <section class="admin-panel" id="panel-resumo">
+
+                <div class="stats">
+
+                    <article>
+                        <span>Jogos cadastrados</span>
+                        <strong id="stat-games">0</strong>
+                    </article>
+
+                    <article>
+                        <span>Categorias</span>
+                        <strong id="stat-categories">0</strong>
+                    </article>
+
+                    <article>
+                        <span>Pedidos realizados</span>
+                        <strong id="stat-orders">0</strong>
+                    </article>
+
+                    <article>
+                        <span>Usuários cadastrados</span>
+                        <strong id="stat-users">0</strong>
+                    </article>
+
+                </div>
+
+                <div class="admin-box">
+
+                    <h2>Bem-vindo ao SPACE GAMES 👾</h2>
+
+                    <p>
+                        Gerencie sua loja em um só lugar. Acompanhe os jogos
+                        cadastrados, organize categorias, consulte pedidos
+                        e administre as contas dos usuários.
+                    </p>
+
+                    <button class="primary-button" type="button" data-go="jogos">
+                        Gerenciar jogos →
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- JOGOS -->
+            <section class="admin-panel" id="panel-jogos" hidden>
+
+                <div class="panel-head">
+
+                    <div>
+                        <h2>Catálogo de jogos</h2>
+                        <p>Gerencie os jogos disponíveis na loja.</p>
+                    </div>
+
+                    <button class="primary-button" type="button" id="new-game">
+                        + Novo jogo
+                    </button>
+
+                </div>
+
+                <label class="admin-search">
+                    ⌕
+                    <input
+                        id="game-search"
+                        type="search"
+                        placeholder="Pesquisar jogo...">
+                </label>
+
+                <div class="table-scroll">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Jogo</th>
+                                <th>Categoria</th>
+                                <th>Preço</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="games-body"></tbody>
+                    </table>
+
+                </div>
+
+                <p id="games-empty" class="empty-note" hidden>
+                    Nenhum jogo encontrado.
+                </p>
+
+            </section>
+
+            <!-- CATEGORIAS -->
+            <section class="admin-panel" id="panel-categorias" hidden>
+
+                <div class="panel-head">
+
+                    <div>
+                        <h2>Categorias</h2>
+                        <p>Organize os gêneros e estilos dos jogos da loja.</p>
+                    </div>
+
+                </div>
+
+                <form id="category-form" class="inline-form">
+
+                    <label>
+                        Nome da categoria
+
+                        <input
+                            id="category-name"
+                            maxlength="50"
+                            required
+                            placeholder="Ex.: Aventura">
+                    </label>
+
+                    <button class="primary-button" type="submit">
+                        Adicionar
+                    </button>
+
+                </form>
+
+                <div id="category-list" class="category-list"></div>
+
+            </section>
+
+            <!-- PEDIDOS -->
+            <section class="admin-panel" id="panel-pedidos" hidden>
+
+                <div class="panel-head">
+
+                    <div>
+                        <h2>Pedidos</h2>
+                        <p>Consulte os pedidos e acompanhe as compras realizadas.</p>
+                    </div>
+
+                </div>
+
+                <div class="table-scroll">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Pedido</th>
+                                <th>Cliente</th>
+                                <th>Jogo</th>
+                                <th>Valor</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="orders-body"></tbody>
+                    </table>
+
+                </div>
+
+            </section>
+
+            <!-- USUÁRIOS -->
+            <section class="admin-panel" id="panel-usuarios" hidden>
+
+                <div class="panel-head">
+
+                    <div>
+                        <h2>Usuários</h2>
+                        <p>Gerencie as contas e permissões dos usuários cadastrados.</p>
+                    </div>
+
+                </div>
+
+                <div class="table-scroll">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>E-mail</th>
+                                <th>Perfil</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="users-body"></tbody>
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- MODAL DE CADASTRO E EDIÇÃO DE JOGOS -->
+    <dialog id="game-dialog">
+
+        <form id="game-form" class="game-form">
+
+            <div class="dialog-head">
+
+                <h2 id="dialog-title">Novo jogo</h2>
+
+                <button
+                    type="button"
+                    id="close-dialog"
+                    aria-label="Fechar">
+                    ✕
+                </button>
+
+            </div>
+
+            <input type="hidden" id="game-id">
+
+            <label>
+                Título
+
+                <input
+                    id="game-title"
+                    required
+                    maxlength="100"
+                    placeholder="Nome do jogo">
+            </label>
+
+            <label>
+                Descrição
+
+                <textarea
+                    id="game-description"
+                    rows="3"
+                    placeholder="Descrição breve"></textarea>
+            </label>
+
+            <div class="form-two">
+
+                <label>
+                    Categoria
+
+                    <select id="game-category" required></select>
+                </label>
+
+                <label>
+                    Preço (R$)
+
+                    <input
+                        id="game-price"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        required>
+                </label>
+
+            </div>
+
+            <label class="check-line">
+                <input id="game-playable" type="checkbox">
+                Jogável na plataforma
+            </label>
+
+            <div class="dialog-actions">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="cancel-dialog">
+                    Cancelar
+                </button>
+
+                <button type="submit" class="primary-button">
+                    Salvar jogo
+                </button>
+
+            </div>
+
+        </form>
+
+    </dialog>
+
+    <!-- NOTIFICAÇÕES -->
+    <div
+        id="admin-toast"
+        class="toast"
+        role="status"
+        aria-live="polite">
+    </div>
+
+</body>
+</html>

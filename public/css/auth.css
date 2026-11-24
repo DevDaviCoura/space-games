@@ -1,0 +1,244 @@
+/* Complemento visual para as páginas de login e cadastro. */
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(circle at 78% 42%, #25113c 0, transparent 42%), #0d0e17
+}
+
+.auth-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 23px clamp(20px, 5vw, 80px);
+    border-bottom: 1px solid var(--line);
+    background: #10111b
+}
+
+.auth-back {
+    font-size: 13px;
+    color: #c8b8dc
+}
+
+.auth-back:hover {
+    color: var(--purple2)
+}
+
+.auth-main {
+    width: min(1080px, calc(100% - 36px));
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    overflow: hidden;
+    border: 1px solid #3a2850;
+    border-radius: 18px;
+    background: #171927;
+    box-shadow: 0 25px 90px #0007
+}
+
+.auth-panel {
+    padding: clamp(26px, 5vw, 58px)
+}
+
+.auth-emblem {
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 20px;
+    border: 1px solid #653393;
+    border-radius: 15px;
+    background: #29173d;
+    font-size: 27px
+}
+
+.auth-eyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    color: var(--purple2)
+}
+
+.auth-panel h1 {
+    margin: 10px 0;
+    font: 800 clamp(23px, 3vw, 32px)/1.25 Orbitron, Arial, sans-serif
+}
+
+.auth-panel h1 span,
+.auth-aside h2 span {
+    color: var(--purple2)
+}
+
+.auth-description {
+    margin-bottom: 28px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--muted)
+}
+
+.auth-form {
+    display: grid;
+    gap: 16px
+}
+
+.auth-field {
+    display: grid;
+    gap: 8px
+}
+
+.auth-field label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #dedbea
+}
+
+.auth-field input {
+    width: 100%;
+    height: 47px;
+    padding: 0 14px;
+    border: 1px solid #383a50;
+    border-radius: 8px;
+    outline: none;
+    background: #10121e;
+    color: #fff;
+    font-size: 13px;
+    transition: border-color .2s, box-shadow .2s
+}
+
+.auth-field input::placeholder {
+    color: #7f8094
+}
+
+.auth-field input:focus {
+    border-color: var(--purple2);
+    box-shadow: 0 0 0 3px #871cff25
+}
+
+.auth-submit {
+    min-height: 48px;
+    margin-top: 8px;
+    padding: 12px 18px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--purple);
+    color: white;
+    font-weight: 800;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background .2s, transform .2s
+}
+
+.auth-submit:hover {
+    background: #a13cff;
+    transform: translateY(-1px)
+}
+
+.auth-message {
+    min-height: 18px;
+    color: #c9b7e0;
+    font-size: 12px;
+    line-height: 1.5
+}
+
+.auth-message.error {
+    color: #ff9ca9
+}
+
+.auth-switch {
+    margin-top: 22px;
+    text-align: center;
+    color: #aaa8bd;
+    font-size: 12px
+}
+
+.auth-switch a {
+    color: var(--purple2);
+    font-weight: 700
+}
+
+.auth-switch a:hover {
+    text-decoration: underline
+}
+
+.auth-aside {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 45px;
+    background: radial-gradient(circle at 50% 34%, #7030ad88, transparent 47%), linear-gradient(145deg, #211334, #120e1d);
+    border-left: 1px solid #392348
+}
+
+.auth-orbit {
+    display: grid;
+    place-items: center;
+    width: 190px;
+    height: 190px;
+    margin: 0 auto 35px;
+    border: 2px solid #9d57d666;
+    border-radius: 50%;
+    background: radial-gradient(circle, #7d35c5, #30164c 65%, #180f28);
+    box-shadow: 0 0 55px #8d35d477, inset 0 0 35px #130a23
+}
+
+.auth-orbit span {
+    font-size: 80px;
+    filter: drop-shadow(0 10px 15px #110a19)
+}
+
+.auth-aside h2 {
+    margin: 14px 0;
+    font: 800 clamp(23px, 3vw, 36px)/1.2 Orbitron, Arial, sans-serif
+}
+
+.auth-aside>p:last-child {
+    font-size: 13px;
+    color: #d1c5df;
+    line-height: 1.8
+}
+
+.auth-footer {
+    text-align: center;
+    padding: 20px;
+    color: #8f8da3;
+    font-size: 11px
+}
+
+@media(max-width:750px) {
+    .auth-main {
+        grid-template-columns: 1fr;
+        margin: 35px auto
+    }
+
+    .auth-aside {
+        display: none
+    }
+
+    .auth-panel {
+        padding: 30px
+    }
+
+    .auth-header {
+        padding: 20px
+    }
+
+    .auth-header .brand {
+        min-width: 0
+    }
+}
+
+@media(max-width:420px) {
+    .auth-back {
+        font-size: 11px
+    }
+
+    .auth-panel {
+        padding: 25px 20px
+    }
+
+    .auth-panel h1 {
+        font-size: 23px
+    }
+}

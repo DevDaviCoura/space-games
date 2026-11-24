@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Crie sua conta SPACE GAMES.">
+  <title>SPACE GAMES | Cadastro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/auth.css">
+</head>
+<body class="auth-page">
+  <header class="auth-header">
+    <a href="/" class="brand" aria-label="Voltar à loja SPACE GAMES">
+      <span class="brand-icon">👾</span>
+      <span class="brand-text"><strong>SPACE</strong><b>GAMES</b></span>
+    </a>
+    <a class="auth-back" href="/">← Voltar para a loja</a>
+  </header>
+
+  <main class="auth-main">
+    <section class="auth-panel" aria-labelledby="auth-title">
+      <p class="auth-eyebrow">ENTRE PARA O UNIVERSO</p>
+      <h1 id="auth-title">Crie sua <span>conta</span></h1>
+      <p class="auth-description">Cadastre-se e comece a explorar seus próximos jogos favoritos.</p>
+
+      <!-- Integração futura: POST /api/auth/cadastro -->
+      <form id="cadastro-form" class="auth-form">
+        <div class="auth-field">
+          <label for="nome">Nome</label>
+          <input id="nome" name="nome" type="text" placeholder="Como podemos chamar você?" autocomplete="name" minlength="2" required>
+        </div>
+        <div class="auth-field">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" placeholder="seuemail@exemplo.com" autocomplete="email" required>
+        </div>
+        <div class="auth-field">
+          <label for="senha">Senha</label>
+          <input id="senha" name="senha" type="password" placeholder="Crie uma senha" autocomplete="new-password" minlength="8" required>
+        </div>
+        <div class="auth-field">
+          <label for="confirmar-senha">Confirme sua senha</label>
+          <input id="confirmar-senha" name="confirmarSenha" type="password" placeholder="Digite a senha novamente" autocomplete="new-password" minlength="8" required>
+        </div>
+        <button type="submit" class="auth-submit">Criar minha conta →</button>
+        <p id="form-message" class="auth-message" role="status" aria-live="polite"></p>
+      </form>
+      <p class="auth-switch">Já possui uma conta? <a href="/login.html">Fazer login</a></p>
+    </section>
+    <aside class="auth-aside" aria-label="SPACE GAMES">
+      <div class="auth-orbit" aria-hidden="true"><span>👾</span></div>
+      <p class="auth-eyebrow">PREPARE-SE PARA JOGAR</p>
+      <h2>Seu próximo jogo <span>está esperando.</span></h2>
+      <p>Crie seu perfil, explore o catálogo e descubra o universo SPACE GAMES.</p>
+    </aside>
+  </main>
+  <footer class="auth-footer">© 2026 SPACE GAMES. Todos os direitos reservados.</footer>
+  <script src="/js/auth-ui.js" defer></script>
+</body>
+</html>

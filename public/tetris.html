@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SPACE GAMES | Tetris Classic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/tetris.css">
+    <script src="/js/tetris.js" defer></script>
+</head>
+
+<body>
+    <header class="game-header"><a class="brand" href="/"><span class="brand-icon">👾</span><span
+                class="brand-text"><strong>SPACE</strong><b>GAMES</b></span></a>
+        <nav><a href="/biblioteca.html">← Minha biblioteca</a><a href="/">Loja</a></nav>
+    </header>
+    <main class="tetris-page">
+        <div class="page-intro"><span class="eyebrow">ARCADE SPACE GAMES</span>
+            <h1>TETRIS <span>CLASSIC</span></h1>
+            <p>Encaixe os blocos, complete linhas e bata seu recorde.</p>
+            <p class="demo-note">Versão de teste do frontend: o acesso ainda não verifica a compra. A integração ficará
+                com o Nicolas.</p>
+        </div>
+        <div class="game-layout">
+            <section class="board-wrap" aria-label="Área do jogo"><canvas id="board" width="300" height="600"
+                    aria-label="Tabuleiro de Tetris com 10 colunas e 20 linhas"></canvas>
+                <div class="game-overlay" id="overlay">
+                    <h2 id="overlay-title">PRONTO PARA JOGAR?</h2>
+                    <p id="overlay-text">Clique em Iniciar para começar.</p><button id="overlay-button"
+                        class="primary-button">▶ Iniciar jogo</button>
+                </div>
+            </section>
+            <aside class="game-panel">
+                <div class="stat"><span>PONTUAÇÃO</span><strong id="score">0</strong></div>
+                <div class="stat"><span>LINHAS</span><strong id="lines">0</strong></div>
+                <div class="stat"><span>NÍVEL</span><strong id="level">1</strong></div>
+                <div class="stat"><span>RECORDE LOCAL</span><strong id="best">0</strong></div>
+                <div class="next-box"><span>PRÓXIMA PEÇA</span><canvas id="next" width="120" height="120"
+                        aria-label="Próxima peça"></canvas></div>
+                <div class="game-actions"><button id="pause" type="button" disabled>⏸ Pausar</button><button
+                        id="restart" type="button">↻ Reiniciar</button></div>
+                <div class="help">
+                    <h2>Como jogar</h2>
+                    <p>← → mover • ↑ girar</p>
+                    <p>↓ acelerar • Espaço soltar</p>
+                    <p>P pausar / continuar</p>
+                </div>
+            </aside>
+        </div>
+        <div class="touch-controls" aria-label="Controles para celular"><button type="button" data-action="left"
+                aria-label="Mover para esquerda">←</button><button type="button" data-action="rotate"
+                aria-label="Girar peça">↻</button><button type="button" data-action="right"
+                aria-label="Mover para direita">→</button><button type="button" data-action="down"
+                aria-label="Descer peça">↓</button><button type="button" data-action="drop"
+                aria-label="Soltar peça">⤓</button></div>
+    </main>
+</body>
+
+</html>

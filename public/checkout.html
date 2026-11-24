@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/checkout.css">
+    <title>SPACE GAMES | Checkout</title>
+</head>
+
+<body class="checkout-page">
+    <header class="checkout-header"><a href="/" class="brand"><span class="brand-icon">👾</span><span
+                class="brand-text"><strong>SPACE</strong><b>GAMES</b></span></a><a class="back" href="/">← Continuar
+            comprando</a></header>
+    <main class="checkout-layout">
+        <section class="checkout-panel">
+            <p class="eyebrow">ÚLTIMA ETAPA</p>
+            <h1>Finalizar <span>pedido</span></h1>
+            <p class="lead">Revise os jogos selecionados.</p>
+            <div id="checkout-list" class="cart-list"></div>
+            <p id="checkout-empty" class="empty" hidden>Seu carrinho está vazio. <a href="/">Voltar à loja →</a></p>
+            <div class="payment">
+                <h2>Forma de pagamento</h2><label><input type="radio" checked disabled> Pagamento simulado (atividade
+                    acadêmica)</label>
+                <p>Pagamento totalmente simulado. Nenhum valor será cobrado.</p>
+            </div>
+            <p class="checkout-message" id="checkout-message" role="status" aria-live="polite"></p>
+        </section>
+        <aside class="summary">
+            <h2>Resumo do pedido</h2>
+            <div class="summary-line"><span>Jogos</span><strong id="item-count">0</strong></div>
+            <div class="summary-line total"><span>Total</span><strong id="total">R$ 0,00</strong></div><button
+                id="confirm-order" class="checkout-button" type="button">Confirmar pedido</button>
+            <p>Pagamento simulado • Compra segura para fins acadêmicos</p>
+        </aside>
+    </main>
+    <footer class="checkout-footer">© 2026 SPACE GAMES</footer>
+    <script src="/js/cart.js" defer></script>
+</body>
+
+</html>

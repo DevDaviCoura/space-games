@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SPACE GAMES — sua loja de jogos favorita.">
+  <title>SPACE GAMES | Loja</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/main.js" defer></script>
+</head>
+
+<body>
+  <header class="topbar">
+    <a href="/" class="brand" aria-label="SPACE GAMES início">
+      <span class="brand-icon">👾</span>
+      <span class="brand-text"><strong>SPACE</strong><b>GAMES</b></span>
+    </a>
+
+    <button class="mobile-menu" id="mobile-menu" aria-label="Abrir menu">☰</button>
+
+    <nav class="top-nav" id="top-nav">
+      <a class="selected" href="/">⌂ <span>Início</span></a>
+      <a href="#loja">🎮 <span>Loja</span></a>
+      <a href="#categorias">♟ <span>Categorias</span></a>
+      <a href="#sobre">ⓘ <span>Sobre</span></a>
+      <a href="/biblioteca.html">▣ <span>Biblioteca</span></a>
+    </nav>
+
+    <label class="search">
+      <span>⌕</span>
+      <input type="search" id="search-games" placeholder="Buscar jogos...">
+    </label>
+
+    <div class="user-actions">
+      <a href="/carrinho.html" class="cart">
+        🛒 <span id="cart-count">0</span>
+      </a>
+
+      <div class="account-menu" id="account-menu">
+
+        <a href="/login.html" class="account" id="login-link">
+          <span class="user-icon">●</span>
+          Entrar
+        </a>
+
+        <button type="button" class="account" id="user-menu-button" hidden>
+          <span class="user-icon">●</span>
+          <span id="user-name">Usuário</span>
+          <span id="user-arrow">⌄</span>
+        </button>
+
+        <div class="account-dropdown" id="account-dropdown" hidden>
+
+          <a href="/admin.html" id="admin-link" hidden>
+            <span>⚙</span> Painel administrativo
+          </a>
+
+          <button type="button" id="logout-button">
+            <span>↪</span> Sair da conta
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+
+  <main id="topo" class="layout">
+    <aside class="sidebar">
+      <p class="side-title">NAVEGAR POR CATEGORIAS</p>
+
+      <a class="category-link" href="#loja" data-category="Ação">
+        <span>⚔</span>Ação
+      </a>
+
+      <a class="category-link" href="#loja" data-category="Aventura">
+        <span>✦</span>Aventura
+      </a>
+
+      <a class="category-link" href="#loja" data-category="RPG">
+        <span>♜</span>RPG
+      </a>
+
+      <a class="category-link" href="#loja" data-category="Estratégia">
+        <span>♟</span>Estratégia
+      </a>
+
+      <a class="category-link" href="#loja" data-category="Corrida">
+        <span>◉</span>Corrida
+      </a>
+
+      <a class="category-link" href="#loja" data-category="Indie">
+        <span>▦</span>Indie
+      </a>
+
+      <a class="category-link all-games" href="#loja" data-category="Todas"><span>▤</span>Todos os jogos →</a>
+
+      <div class="sidebar-promo">
+        <div class="promo-alien">👾</div>
+        <strong>SPACE <span>GAMES</span></strong>
+        <p>Jogue mais. Viva mais.</p>
+        <a href="#loja">Explorar loja →</a>
+      </div>
+    </aside>
+
+    <div class="store-content">
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="tag">DESTAQUE DA SEMANA</span>
+          <h1>EXPLORE<br><span>NOVOS MUNDOS</span></h1>
+          <p>Grandes aventuras, mundos incríveis e jogos para todos os estilos.</p>
+          <a href="#loja" class="primary-button">🎮 Explorar jogos</a>
+        </div>
+        <div class="hero-planet" aria-hidden="true">
+          <div class="planet"></div>
+          <div class="astronaut"></div>
+          <span class="star star-one">✦</span><span class="star star-two">✧</span>
+        </div>
+        <div class="hero-pagination"><i class="active"></i><i></i><i></i></div>
+      </section>
+
+      <section class="store-section" id="loja">
+        <div class="section-heading">
+          <div><span class="eyebrow">SELEÇÃO SPACE GAMES</span>
+            <h2>Destaques da <span>Loja</span></h2>
+          </div>
+          <a href="#loja" class="see-all">Ver todos →</a>
+        </div>
+
+        <div class="game-grid" id="game-grid">
+
+          <article class="game-card" data-name="elden ring" data-category="RPG">
+            <div class="game-art elden">
+              <span class="game-stamp">Mais vendido</span>
+              <strong>ER</strong>
+            </div>
+            <div class="game-details">
+              <div>
+                <h3>Elden Ring</h3><span class="game-category">RPG</span>
+              </div>
+              <div class="game-purchase">
+                <span class="price">R$ 249,90</span>
+                <button class="add-cart" type="button" data-game="1"
+                  aria-label="Adicionar Elden Ring ao carrinho">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="game-card" data-name="cyberpunk 2077" data-category="Ação">
+            <div class="game-art cyber">
+              <span class="game-stamp">Destaque</span>
+              <strong>2077</strong>
+            </div>
+            <div class="game-details">
+              <div>
+                <h3>Cyberpunk 2077</h3><span class="game-category">Ação</span>
+              </div>
+              <div class="game-purchase">
+                <span class="price">R$ 199,90</span>
+                <button class="add-cart" type="button" data-game="2"
+                  aria-label="Adicionar Cyberpunk 2077 ao carrinho">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="game-card" data-name="red dead redemption 2" data-category="Aventura">
+            <div class="game-art western">
+              <span class="game-stamp">Oferta</span>
+              <strong>RDR2</strong>
+            </div>
+            <div class="game-details">
+              <div>
+                <h3>Red Dead Redemption 2</h3><span class="game-category">Aventura</span>
+              </div>
+              <div class="game-purchase">
+                <span class="price">R$ 149,90</span>
+                <button class="add-cart" type="button" data-game="3"
+                  aria-label="Adicionar Red Dead Redemption 2 ao carrinho">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="game-card" data-name="god of war ragnarök" data-category="Ação">
+            <div class="game-art nordic">
+              <span class="game-stamp">Novo</span>
+              <strong>GOW</strong>
+            </div>
+            <div class="game-details">
+              <div>
+                <h3>God of War Ragnarök</h3><span class="game-category">Ação</span>
+              </div>
+              <div class="game-purchase">
+                <span class="price">R$ 249,90</span>
+                <button class="add-cart" type="button" data-game="4"
+                  aria-label="Adicionar God of War Ragnarök ao carrinho">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="game-card" data-name="forza horizon 5" data-category="Corrida">
+            <div class="game-art racing">
+              <span class="game-stamp">Destaque</span>
+              <strong>FH5</strong>
+            </div>
+            <div class="game-details">
+              <div>
+                <h3>Forza Horizon 5</h3><span class="game-category">Corrida</span>
+              </div>
+              <div class="game-purchase">
+                <span class="price">R$ 179,90</span>
+                <button class="add-cart" type="button" data-game="5"
+                  aria-label="Adicionar Forza Horizon 5 ao carrinho">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="game-card" data-name="no man’s sky" data-category="Aventura">
+            <div class="game-art space">
+              <span class="game-stamp">Oferta</span>
+              <strong>NMS</strong>
+            </div>
+            <div class="game-details">
+              <div>
+                <h3>No Man’s Sky</h3><span class="game-category">Aventura</span>
+              </div>
+              <div class="game-purchase">
+                <span class="price">R$ 89,90</span>
+                <button class="add-cart" type="button" data-game="6"
+                  aria-label="Adicionar No Man’s Sky ao carrinho">+</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+        <p class="no-results" id="no-results" hidden>Nenhum jogo encontrado.</p>
+      </section>
+
+      <section class="store-section category-section" id="categorias">
+        <div class="section-heading">
+          <div><span class="eyebrow">ENCONTRE SEU ESTILO</span>
+            <h2>Explore por <span>categoria</span></h2>
+          </div>
+        </div>
+        <div class="category-grid">
+
+          <a href="#loja" class="category-tile" data-category="Ação">
+            <span>⚔</span><strong>Ação</strong>
+          </a>
+
+          <a href="#loja" class="category-tile" data-category="Aventura">
+            <span>✦</span><strong>Aventura</strong>
+          </a>
+
+          <a href="#loja" class="category-tile" data-category="RPG">
+            <span>♜</span><strong>RPG</strong>
+          </a>
+
+          <a href="#loja" class="category-tile" data-category="Estratégia">
+            <span>♟</span><strong>Estratégia</strong>
+          </a>
+
+          <a href="#loja" class="category-tile" data-category="Corrida">
+            <span>◉</span><strong>Corrida</strong>
+          </a>
+
+          <a href="#loja" class="category-tile" data-category="Indie">
+            <span>▦</span><strong>Indie</strong>
+          </a>
+
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer" id="sobre">
+    <a href="/" class="brand footer-brand">
+      <span class="brand-icon">👾</span>
+      <span class="brand-text"><strong>SPACE</strong><b>GAMES</b></span>
+    </a>
+    <p>© 2026 SPACE GAMES. Todos os direitos reservados.</p>
+    <a href="#topo">Voltar ao topo ↑</a>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+
+</html>

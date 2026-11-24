@@ -1,0 +1,245 @@
+body.checkout-page {
+    background: radial-gradient(circle at 80% 0, #25123a 0, transparent 35%), var(--bg);
+    min-height: 100vh
+}
+
+.checkout-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px max(4%, calc((100vw - 1200px)/2));
+    border-bottom: 1px solid var(--line);
+    gap: 16px
+}
+
+.back {
+    color: #c9b5ec;
+    font-size: 13px
+}
+
+.checkout-layout {
+    max-width: 1200px;
+    margin: 52px auto 90px;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 24px;
+    align-items: start
+}
+
+.checkout-panel,
+.summary {
+    background: #171927;
+    border: 1px solid #343047;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 16px 50px #0002
+}
+
+.checkout-panel h1 {
+    font: 800 clamp(26px, 3vw, 38px) Orbitron, sans-serif;
+    margin: 12px 0
+}
+
+.checkout-panel h1 span {
+    color: var(--purple2)
+}
+
+.lead {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 24px
+}
+
+.cart-list {
+    display: grid;
+    gap: 12px
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    background: #202236;
+    border: 1px solid #34334a;
+    border-radius: 12px;
+    padding: 18px
+}
+
+.cart-item h3 {
+    font-size: 15px;
+    margin-bottom: 6px
+}
+
+.cart-item p {
+    font-size: 12px;
+    color: var(--muted)
+}
+
+.cart-right {
+    display: flex;
+    align-items: center;
+    gap: 16px
+}
+
+.cart-right strong {
+    color: #b8cfff;
+    white-space: nowrap
+}
+
+.remove {
+    border: 1px solid #69455c;
+    border-radius: 8px;
+    background: #382235;
+    color: #ffd5e2;
+    cursor: pointer;
+    padding: 8px 11px
+}
+
+.remove:hover {
+    background: #603047
+}
+
+.summary h2,
+.payment h2 {
+    font-size: 17px;
+    margin-bottom: 25px
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 18px 0;
+    color: #b5b5c7;
+    font-size: 14px
+}
+
+.summary-line strong {
+    color: white
+}
+
+.summary-line.total {
+    border-top: 1px solid var(--line);
+    padding-top: 22px;
+    margin-top: 25px;
+    font-size: 18px
+}
+
+.summary-line.total strong {
+    color: var(--purple2)
+}
+
+.checkout-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: var(--purple);
+    color: #fff;
+    border: 0;
+    border-radius: 9px;
+    padding: 15px 12px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 22px 0 13px
+}
+
+.checkout-button:hover {
+    background: #a13cff
+}
+
+.checkout-button.disabled,
+.checkout-button:disabled {
+    opacity: .4;
+    pointer-events: none;
+    cursor: not-allowed
+}
+
+.summary>p,
+.payment p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6
+}
+
+.empty {
+    padding: 26px;
+    text-align: center;
+    background: #202236;
+    border-radius: 12px;
+    color: #bbb
+}
+
+.empty a {
+    color: var(--purple2)
+}
+
+.payment {
+    margin-top: 24px;
+    padding: 20px;
+    background: #202236;
+    border-radius: 12px
+}
+
+.payment h2 {
+    margin-bottom: 16px
+}
+
+.payment label {
+    font-size: 13px
+}
+
+.payment p {
+    margin-top: 12px
+}
+
+.checkout-message {
+    margin-top: 20px;
+    color: #d4b3ff;
+    font-size: 13px
+}
+
+.checkout-footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    padding: 20px
+}
+
+.checkout-header .brand {
+    min-width: 0
+}
+
+@media(max-width:800px) {
+    .checkout-layout {
+        grid-template-columns: 1fr;
+        margin-top: 24px
+    }
+
+    .checkout-header {
+        padding: 18px 5%
+    }
+
+    .checkout-panel,
+    .summary {
+        padding: 22px
+    }
+}
+
+@media(max-width:480px) {
+    .cart-item {
+        align-items: flex-start;
+        flex-direction: column
+    }
+
+    .cart-right {
+        width: 100%;
+        justify-content: space-between
+    }
+
+    .back {
+        font-size: 11px
+    }
+}

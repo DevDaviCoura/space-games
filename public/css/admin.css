@@ -1,0 +1,692 @@
+
+/* =====================================
+   ESTRUTURA PRINCIPAL
+===================================== */
+
+.admin-shell {
+    display: grid;
+    grid-template-columns: 245px minmax(0, 1fr);
+    min-height: 100vh;
+}
+
+.admin-sidebar {
+    background: #121320;
+    border-right: 1px solid var(--line);
+    padding: 27px 19px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.admin-sidebar .brand {
+    min-width: 0;
+    text-decoration: none;
+}
+
+.admin-label {
+    font-size: 10px;
+    letter-spacing: 1.4px;
+    color: var(--muted);
+    margin: 0;
+}
+
+.admin-nav {
+    display: grid;
+    gap: 8px;
+}
+
+.admin-nav button {
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    background: transparent;
+    color: #c4c1d2;
+    padding: 13px 14px;
+    text-align: left;
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.admin-nav button:hover,
+.admin-nav button.active {
+    background: #331c50;
+    border-color: #56357c;
+    color: white;
+}
+
+.back-store {
+    margin-top: auto;
+    font-size: 13px;
+    color: var(--purple2);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.back-store:hover {
+    color: white;
+}
+
+/* =====================================
+   CONTEÚDO PRINCIPAL
+===================================== */
+
+.admin-main {
+    min-width: 0;
+    padding: 35px clamp(18px, 4vw, 55px);
+}
+
+.admin-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.admin-top h1 {
+    font: 800 clamp(24px, 3vw, 35px) Orbitron, Arial, sans-serif;
+    margin-top: 8px;
+}
+
+.demo-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #7547a3;
+    background: #291b3c;
+    padding: 9px 14px;
+    border-radius: 30px;
+    color: #ddc6ff;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+/* =====================================
+   CARDS E ESTATÍSTICAS
+===================================== */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.stats article,
+.admin-box,
+.admin-panel:not(#panel-resumo) {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    padding: 23px;
+}
+
+.stats article {
+    min-width: 0;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.stats article:hover {
+    border-color: #7547a3;
+    transform: translateY(-2px);
+}
+
+.stats article span {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.stats article strong {
+    display: block;
+    margin-top: 13px;
+    font: 700 30px Orbitron, Arial, sans-serif;
+    color: #c38aff;
+}
+
+.admin-box h2 {
+    font-size: 22px;
+}
+
+.admin-box p,
+.panel-head p {
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 13px;
+    margin: 9px 0 20px;
+}
+
+/* =====================================
+   BOTÕES
+===================================== */
+
+.admin-box .primary-button,
+.panel-head .primary-button,
+.inline-form .primary-button,
+.dialog-actions .primary-button {
+    border: 0;
+    cursor: pointer;
+}
+
+.admin-main button {
+    font-family: inherit;
+}
+
+.primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 40px;
+    padding: 10px 17px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.primary-button:hover {
+    transform: translateY(-1px);
+}
+
+/* =====================================
+   CABEÇALHO DAS SEÇÕES
+===================================== */
+
+.panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.panel-head > div {
+    min-width: 0;
+}
+
+.panel-head h2 {
+    font-size: 21px;
+    margin: 0;
+}
+
+.panel-head p {
+    margin: 8px 0 0;
+}
+
+/* =====================================
+   CAMPO DE PESQUISA
+===================================== */
+
+.admin-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--line);
+    background: #111320;
+    border-radius: 8px;
+    padding: 11px 15px;
+    max-width: 350px;
+    margin-bottom: 20px;
+    color: var(--muted);
+}
+
+.admin-search:focus-within {
+    border-color: #a15af1;
+}
+
+.admin-search input {
+    border: 0;
+    background: transparent;
+    color: white;
+    outline: none;
+    width: 100%;
+    min-width: 0;
+    font: inherit;
+    font-size: 13px;
+}
+
+/* =====================================
+   TABELAS
+===================================== */
+
+.table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+}
+
+.table-scroll table {
+    width: 100%;
+    min-width: 560px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.table-scroll th,
+.table-scroll td {
+    padding: 15px 16px;
+    border-bottom: 1px solid var(--line);
+    font-size: 13px;
+    vertical-align: middle;
+    line-height: 1.5;
+}
+
+.table-scroll th {
+    background: #171727;
+    color: #a7a2bb;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    white-space: nowrap;
+}
+
+.table-scroll td {
+    color: #e5e0ef;
+}
+
+.table-scroll tbody tr {
+    transition: background 0.2s;
+}
+
+.table-scroll tbody tr:hover {
+    background: rgba(117, 71, 163, 0.08);
+}
+
+.table-scroll tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+/* =====================================
+   STATUS
+===================================== */
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    border-radius: 20px;
+    padding: 5px 10px;
+    background: #253c32;
+    color: #9cf1bc;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.status.off {
+    background: #3a2735;
+    color: #ffb7c3;
+}
+
+/* =====================================
+   AÇÕES DAS TABELAS
+===================================== */
+
+/* Quando a classe está diretamente no TD */
+.table-scroll td.table-actions {
+    display: table-cell;
+    min-width: 180px;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+/* Quando a classe está em uma DIV dentro do TD */
+.table-actions:not(td) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+/* Botões das ações */
+.table-actions button,
+.table-scroll td.table-actions button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 7px 12px;
+    margin: 2px 4px 2px 0;
+    border: 1px solid #56357c;
+    border-radius: 7px;
+    background: #2b1c40;
+    color: #e5d3ff;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.table-actions button:hover,
+.table-scroll td.table-actions button:hover {
+    background: #56357c;
+    border-color: #8d5bc0;
+    color: white;
+}
+
+/* =====================================
+   MENSAGENS VAZIAS
+===================================== */
+
+.empty-note {
+    color: var(--muted);
+    padding: 20px;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* =====================================
+   FORMULÁRIO DE CATEGORIAS
+===================================== */
+
+.inline-form {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.inline-form label,
+.game-form label {
+    display: grid;
+    gap: 8px;
+    color: #cbc4d9;
+    font-size: 12px;
+    flex: 1;
+    min-width: 0;
+}
+
+.inline-form input,
+.game-form input:not([type="checkbox"]),
+.game-form select,
+.game-form textarea {
+    width: 100%;
+    min-width: 0;
+    border: 1px solid #3a3450;
+    background: #111320;
+    border-radius: 8px;
+    color: white;
+    padding: 12px;
+    font: inherit;
+    font-size: 13px;
+    outline: none;
+}
+
+.inline-form input:focus,
+.game-form input:focus,
+.game-form select:focus,
+.game-form textarea:focus {
+    border-color: #a15af1;
+}
+
+/* =====================================
+   LISTA DE CATEGORIAS
+===================================== */
+
+.category-list {
+    display: grid;
+    gap: 10px;
+}
+
+.category-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 14px 16px;
+    background: #111320;
+    border-radius: 9px;
+    border: 1px solid var(--line);
+    transition: border-color 0.2s;
+}
+
+.category-row:hover {
+    border-color: #7547a3;
+}
+
+.category-row > span,
+.category-row > strong {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    color: #e5e0ef;
+    font-size: 13px;
+}
+
+.category-row button,
+.category-list button {
+    flex-shrink: 0;
+    border: 1px solid #56357c;
+    background: #2b1c40;
+    color: #e5d3ff;
+    border-radius: 7px;
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.category-row button:hover,
+.category-list button:hover {
+    background: #56357c;
+}
+
+/* =====================================
+   MODAL DE JOGOS
+===================================== */
+
+dialog {
+    width: min(94vw, 550px);
+    max-height: 90vh;
+    overflow: auto;
+    margin: auto;
+    background: #1b1b2d;
+    border: 1px solid #65418d;
+    border-radius: 15px;
+    color: white;
+    padding: 26px;
+}
+
+dialog::backdrop {
+    background: rgba(5, 3, 11, 0.8);
+    backdrop-filter: blur(3px);
+}
+
+.game-form {
+    display: grid;
+    gap: 17px;
+}
+
+.dialog-head,
+.dialog-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.dialog-head h2 {
+    font: 700 20px Orbitron, Arial, sans-serif;
+    margin: 0;
+}
+
+.dialog-head button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.dialog-head button:hover {
+    background: #332744;
+}
+
+.form-two {
+    display: flex;
+    gap: 12px;
+}
+
+.game-form .check-line {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.game-form .check-line input {
+    accent-color: #a15af1;
+}
+
+.dialog-actions {
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+
+.secondary-button {
+    border: 1px solid #524664;
+    background: transparent;
+    color: white;
+    padding: 11px 18px;
+    border-radius: 7px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.secondary-button:hover {
+    background: #332744;
+}
+
+/* =====================================
+   RESPONSIVIDADE
+===================================== */
+
+@media (max-width: 1100px) {
+    .admin-shell {
+        grid-template-columns: 210px minmax(0, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+    .admin-shell {
+        display: block;
+    }
+
+    .admin-sidebar {
+        gap: 15px;
+        padding: 15px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .admin-nav {
+        display: flex;
+        overflow-x: auto;
+        gap: 7px;
+        padding-bottom: 4px;
+    }
+
+    .admin-nav button {
+        width: auto;
+        flex-shrink: 0;
+        white-space: nowrap;
+        padding: 11px 13px;
+    }
+
+    .back-store {
+        display: none;
+    }
+
+    .admin-main {
+        padding: 22px 14px;
+    }
+
+    .admin-top {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 25px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .stats article {
+        padding: 15px;
+    }
+
+    .stats article strong {
+        font-size: 23px;
+    }
+
+    .admin-box,
+    .admin-panel:not(#panel-resumo) {
+        padding: 17px;
+    }
+
+    .panel-head {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .panel-head .primary-button {
+        width: 100%;
+    }
+
+    .inline-form {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .inline-form .primary-button {
+        width: 100%;
+    }
+
+    .form-two {
+        flex-direction: column;
+    }
+
+    .category-row {
+        align-items: flex-start;
+    }
+
+    .dialog-actions {
+        flex-direction: column-reverse;
+    }
+
+    .dialog-actions button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 380px) {
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-top h1 {
+        font-size: 23px;
+    }
+
+    dialog {
+        padding: 19px;
+    }
+}

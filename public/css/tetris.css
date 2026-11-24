@@ -1,0 +1,234 @@
+.game-header {
+    height: 78px;
+    padding: 0 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    background: #10111b
+}
+
+.game-header nav {
+    display: flex;
+    gap: 22px;
+    font-size: 13px;
+    color: #cbb5e8
+}
+
+.game-header nav a:hover {
+    color: #fff
+}
+
+.tetris-page {
+    max-width: 1050px;
+    margin: auto;
+    padding: 32px 20px 65px
+}
+
+.page-intro {
+    text-align: center;
+    margin-bottom: 26px
+}
+
+.page-intro h1 {
+    font: 800 clamp(27px, 5vw, 45px) Orbitron, sans-serif;
+    margin: 9px 0
+}
+
+.page-intro h1 span {
+    color: var(--purple2)
+}
+
+.page-intro>p {
+    color: var(--muted);
+    font-size: 14px
+}
+
+.page-intro .demo-note {
+    margin: 12px auto 0;
+    max-width: 650px;
+    font-size: 12px;
+    color: #bca5d6
+}
+
+.game-layout {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px
+}
+
+.board-wrap {
+    width: min(100%, 342px);
+    position: relative;
+    padding: 14px;
+    border: 1px solid #69319d;
+    background: #171527;
+    border-radius: 14px;
+    box-shadow: 0 0 36px #6d20a42b
+}
+
+#board {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/2;
+    background: #0b0b17;
+    border: 1px solid #35314a
+}
+
+.game-overlay {
+    position: absolute;
+    inset: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    background: #0c0a17df;
+    padding: 16px
+}
+
+.game-overlay[hidden] {
+    display: none
+}
+
+.game-overlay h2 {
+    font: 800 18px Orbitron, sans-serif;
+    color: #e6c8ff
+}
+
+.game-overlay p {
+    font-size: 13px;
+    color: #c5bbd2
+}
+
+.game-overlay button {
+    border: 0;
+    cursor: pointer
+}
+
+.game-panel {
+    width: 225px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px
+}
+
+.stat,
+.next-box,
+.help {
+    background: #181928;
+    border: 1px solid #303047;
+    border-radius: 10px;
+    padding: 15px
+}
+
+.stat span,
+.next-box span {
+    font-size: 10px;
+    color: #a7a2bb;
+    letter-spacing: .7px
+}
+
+.stat strong {
+    display: block;
+    margin-top: 8px;
+    font: 700 22px Orbitron, sans-serif;
+    color: #c488ff
+}
+
+.next-box {
+    grid-column: 1/-1;
+    text-align: center
+}
+
+.next-box canvas {
+    display: block;
+    margin: 8px auto 0;
+    max-width: 100%
+}
+
+.game-actions {
+    grid-column: 1/-1;
+    display: flex;
+    gap: 8px
+}
+
+.game-actions button {
+    flex: 1;
+    padding: 12px 5px;
+    background: #37204e;
+    border: 1px solid #70429a;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer
+}
+
+.game-actions button:disabled {
+    opacity: .4;
+    cursor: not-allowed
+}
+
+.help {
+    grid-column: 1/-1
+}
+
+.help h2 {
+    font-size: 14px;
+    margin-bottom: 10px
+}
+
+.help p {
+    font-size: 12px;
+    color: #b7b0c7;
+    margin: 6px 0
+}
+
+.touch-controls {
+    display: none;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px auto
+}
+
+.touch-controls button {
+    flex: 1;
+    max-width: 70px;
+    padding: 14px 0;
+    border-radius: 9px;
+    background: #34204e;
+    color: #fff;
+    border: 1px solid #7444a6;
+    font-size: 22px;
+    touch-action: manipulation
+}
+
+@media(max-width:700px) {
+    .game-layout {
+        align-items: center;
+        flex-direction: column
+    }
+
+    .game-panel {
+        width: min(100%, 342px)
+    }
+
+    .touch-controls {
+        display: flex
+    }
+
+    .game-header {
+        height: 70px
+    }
+
+    .game-header .brand {
+        min-width: 0
+    }
+
+    .game-header nav {
+        gap: 10px;
+        font-size: 11px
+    }
+}
